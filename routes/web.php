@@ -18,8 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/auth/redirect', [\App\Http\Controllers\Auth\ProviderController::class , 'redirect']);
-Route::get('/auth/callback', [\App\Http\Controllers\Auth\ProviderController::class , 'callback']);
+Route::get('/auth/{provider}/redirect', [\App\Http\Controllers\Auth\ProviderController::class , 'redirect']);
+Route::get('/auth/{provider}/callback', [\App\Http\Controllers\Auth\ProviderController::class , 'callback']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
